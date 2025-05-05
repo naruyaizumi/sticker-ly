@@ -1,0 +1,46 @@
+{
+  "name": "sticker-ly",
+  "version": "1.0.0",
+  "description": "Pembuat dan pemformat stiker untuk WhatsApp",
+  "main": "src/index.js",
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "examples": "node ./examples/index.js",
+    "clean:webp": "find ./ -name '*.webp' -delete",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "keywords": [
+    "Naruya-Izumi",
+    "whatsapp",
+    "stickers",
+    "whatsapp-stickers",
+    "webp"
+  ],
+  "author": {
+    "name": "Naruya Izumi",
+    "url": "https://github.com/"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlenVelocity/wa-sticker-formatter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AlenVelocity/wa-sticker-formatter/issues"
+  },
+  "homepage": "https://github.com/AlenVelocity/wa-sticker-formatter#readme",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "dependencies": {
+    "axios": "^1.9.0",
+    "file-type": "^16.5.3",
+    "fluent-ffmpeg": "^2.1.2",
+    "fs-extra": "^10.0.0",
+    "image-size": "^1.0.0",
+    "node-webpmux": "^3.1.0",
+    "sharp": "^0.34.1"
+  }
+}

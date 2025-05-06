@@ -1,24 +1,44 @@
-# <div align='center'>Sticker.ly</div>
+# <div align='center'>WA STICKER JS</div>
 
 <div align='center'>
 
-![Sticker.ly](https://i.supa.codes/mCEwAK)
+![wa-sticker-js](https://i.supa.codes/Gwl0B2)
 
 </div>
 
-# Sticker.ly
+# wa-sticker-js
 
-**Sticker.ly** adalah alat sederhana yang memungkinkan kamu membuat dan memformat stiker WhatsApp.
+**wa-sticker-js** adalah versi remake dari [`wa-sticker-formatter`](https://github.com/AlenVelocity/wa-sticker-formatter), ditulis ulang menggunakan JavaScript murni (tanpa TypeScript) untuk meningkatkan kompatibilitas dan kemudahan integrasi pada berbagai proyek WhatsApp bot.
+
+## Fitur Utama
+
+- **Migrasi ke JavaScript Native**  
+  Tidak perlu lagi proses build TypeScript, langsung bisa digunakan di runtime Node.js.
+
+- **Perbaikan Audit & Dependency**  
+  Semua dependensi telah dibersihkan dari modul usang atau rawan celah keamanan.
+
+- **Ringan dan Efisien**  
+  Performa lebih baik pada lingkungan server seperti VPS dan Pterodactyl.
+
+- **Kompatibel Penuh dengan WhatsApp**  
+  Mendukung konversi media ke stiker dengan metadata `pack` dan `author`, output webp optimal.
+
+## Catatan
+
+Remake ini bertujuan menjaga fungsionalitas utama dari `wa-sticker-formatter`, namun dengan arsitektur yang lebih praktis, modern, dan bebas dari overhead proses build.
+
+> Dibangun berdasarkan karya asli [`wa-sticker-formatter`](https://github.com/AlenVelocity/wa-sticker-formatter) oleh **Helvio Pedreschi**.
 
 ## Instalasi
 
 ```javascript
-npm install sticker-ly
+npm install wa-sticker-js
 ```
 
 ## Penggunaan
 
-Sticker.ly menyediakan dua cara untuk membuat stiker.
+wa-sticker-js menyediakan dua cara untuk membuat stiker.
 Parameter yang digunakan sama untuk keduanya:
 
 1. Parameter pertama adalah Buffer, string SVG, URL, atau path file dari gambar statis, GIF, atau video.  
@@ -45,8 +65,8 @@ Parameter yang digunakan sama untuk keduanya:
 Sebelum menggunakan library ini, kamu perlu mengimpornya terlebih dahulu.
 
 ```javascript
-import { Sticker, createSticker, StickerTypes } from 'sticker-ly' // ES6
-// const { Sticker, createSticker, StickerTypes } = require('sticker-ly') // CommonJS
+import { Sticker, createSticker, StickerTypes } from 'wa-sticker-js' // ES6
+// const { Sticker, createSticker, StickerTypes } = require('wa-sticker-js') // CommonJS
 ```
 
 ## Menggunakan Konstruktor `Sticker` (Direkomendasikan)
@@ -185,7 +205,7 @@ Pelajari lebih lanjut: [WhatsApp Sticker Categories](https://github.com/WhatsApp
 Untuk mengekstrak metadata dari file WebP, kamu bisa menggunakan fungsi `extractMetadata()`.
 
 ```javascript
-import { extractMetadata, Sticker } from 'sticker-ly'
+import { extractMetadata, Sticker } from 'wa-sticker-js'
 import { readFileSync } from 'fs'
 
 const sticker = readFileSync('sticker.webp')
@@ -203,6 +223,4 @@ let metadata = await extractMetadata(sticker)
 metadata = await Sticker.extractMetadata(sticker)
 ```
 
----
-
-Terima kasih telah menggunakan **Sticker.ly**!
+Terima kasih telah menggunakan **wa-sticker-js**!

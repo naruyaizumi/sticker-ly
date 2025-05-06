@@ -1,19 +1,27 @@
-const Ffmpeg = require('fluent-ffmpeg')
-const { readFile } = require('fs-extra')
-const { tmpdir } = require('os')
+import { readFile } from 'fs/promises'
+import { tmpdir } from 'os'
+import { spawn } from 'child_process'
 
 const imagesToWebp = async (filename) => {
- const file = await new Promise((resolve) => {
-  const name = `${tmpdir()}/${Math.random().toString(36)}.webp`
-  Ffmpeg(filename)
-   .outputOption('-lavfi split[v],palettegen,[v]paletteuse')
-   .outputOption('-vcodec libwebp')
-   .outputFPS(10)
-   .loop(0)
-   .save(name)
-   .on('end', () => resolve(name))
- })
- return await readFile(file)
+const output = `${tmpdir()}/${Math.random().toString(36)}.webp`
+
+await new Promise((resolve, reject) => {
+const ffmpeg = spawn('ffmpeg', [
+'-i', filename,
+'-lavfi', 'split[v],palettegen,[v]paletteuse',
+'-vcodec', 'libwebp',
+'-r', '10',
+'-loop', '0',
+output
+])
+
+ffmpeg.on('close', (code) => {
+if (code === 0) resolve()
+else reject(new Error(`FFmpeg exited with code ${code}`))
+})
+})
+
+return await readFile(output)
 }
 
-module.exports = imagesToWebp
+export default imagesToWebp

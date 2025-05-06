@@ -1,16 +1,16 @@
-const Sticker = require('./Sticker')
-const extractMetadata = require('./extractMetadata')
-const Types = require('./Types')
-const StickerMetadata = require('./internal/Metadata/StickerMetadata')
-const Exif = require('./internal/Metadata/Exif')
-const StickerTypes = require('./internal/Metadata/StickerTypes')
+import { Sticker, createSticker } from './Sticker.js'
+import { extractMetadata } from './extractMetadata.js'
+import StickerMetadata from './internal/Metadata/StickerMetadata.js'
+import Exif from './internal/Metadata/Exif.js'
+import { StickerTypes } from './internal/Metadata/StickerTypes.js'
 
-module.exports = {
- ...Sticker,
- ...extractMetadata,
- ...Types,
- StickerMetadata,
- Exif,
- ...StickerTypes,
- default: Sticker.Sticker
+export {
+Sticker,
+createSticker,
+extractMetadata,
+StickerMetadata,
+Exif,
+StickerTypes
 }
+
+export default Sticker

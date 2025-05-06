@@ -1,12 +1,12 @@
 ;(async () => {
- try {
-  require('./default')
-  require('./crop')
-  require('./full')
-  require('./circle')
-  require('./rounded')
-  require('./star')
- } catch (err) {
-  console.error(err)
- }
+try {
+await import('./default.js')
+await import('./crop.js')
+await import('./full.js')
+await import('./circle.js')
+await import('./rounded.js')
+await import('./star.js')
+} catch (err) {
+console.error(err)
+}
 })()

@@ -1,8 +1,12 @@
 {
-  "name": "sticker-ly",
-  "version": "1.0.0",
+  "name": "wa-sticker-js",
+  "version": "1.0.3",
   "description": "Pembuat dan pemformat stiker untuk WhatsApp",
+  "type": "module",
   "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
   "files": [
     "src"
   ],
@@ -16,31 +20,29 @@
     "whatsapp",
     "stickers",
     "whatsapp-stickers",
-    "webp"
+    "webp",
+    "sticker-maker",
+    "esm"
   ],
   "author": {
     "name": "Naruya Izumi",
-    "url": "https://github.com/"
+    "url": "https://github.com/naruyaizumi/wa-sticker-js"
   },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AlenVelocity/wa-sticker-formatter.git"
+    "url": "git+https://github.com/naruyaizumi/wa-sticker-js.git"
   },
   "bugs": {
-    "url": "https://github.com/AlenVelocity/wa-sticker-formatter/issues"
+    "url": "https://github.com/naruyaizumi/wa-sticker-js/issues"
   },
-  "homepage": "https://github.com/AlenVelocity/wa-sticker-formatter#readme",
+  "homepage": "https://whatsapp.com/channel/0029Vb5vz4oDjiOfUeW2Mt03",
   "engines": {
-    "node": ">=22.0.0"
+    "node": ">=20.0.0"
   },
   "dependencies": {
-    "axios": "^1.9.0",
-    "file-type": "^16.5.3",
-    "fluent-ffmpeg": "^2.1.2",
-    "fs-extra": "^10.0.0",
-    "image-size": "^1.0.0",
-    "node-webpmux": "^3.1.0",
+    "file-type": "^20.5.0",
+    "node-webpmux": "^3.2.1",
     "sharp": "^0.34.1"
   }
 }
